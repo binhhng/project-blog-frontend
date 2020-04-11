@@ -1,4 +1,4 @@
-# Code Base Front-end React, Webpack, Babel, Eslint using with Graphql
+# Project blog frontend
 ## Setting:
 1. Connect to Backend
     - Setting in 2 file ```.env.development.local``` and ```.env.production.local```
