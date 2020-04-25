@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Home() {
-  console.log(React)
+function Home(props) {
+  console.log(props)
   return "home"
 }
 
