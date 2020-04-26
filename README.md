@@ -45,3 +45,4 @@ import('@pages/login').then(({ default: Component }) => {
     - Edit file ```index``` in folder ```config/i18n``` to translate
 6. Support eslint 
     - delete ```src/``` in file ```.eslintignore``` and add script ```"prestart": "npm run eslint-fix"``` into file ```package.json``` to use
+7. This is a best guide for you!
