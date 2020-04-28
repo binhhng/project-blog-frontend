@@ -1,6 +1,7 @@
 // eslint-disable
 import React, { useContext } from 'react'
 import { CommonContext } from '@tools'
+import { Button } from 'antd'
 
 function Layout(props) {
   const { history, t } = props
@@ -32,7 +33,7 @@ function Layout(props) {
         <li onClick={() => onChangeRoute('/role')}>{t('common.menu.role')} (click)</li>
         <li onClick={onLogout}>{t('common.menu.logout')}</li>
       </ul>
-      <p>this is {props.children} page</p>
+      <p>{props.children}</p>
     </div>
   )
 }
