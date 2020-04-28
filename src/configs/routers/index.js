@@ -1,5 +1,26 @@
 export const routes = [
   {
+    label: 'home',
+    path: '/',
+    private: true,
+    exact: true,
+    component: 'home',
+  },
+  {
+    label: 'profile',
+    path: '/profile',
+    private: true,
+    exact: true,
+    component: 'profile',
+  },
+  {
+    label: 'dashboard',
+    path: '/dashboard',
+    private: true,
+    exact: true,
+    component: 'dashboard',
+  },
+  {
     label: 'Login',
     path: '/login',
     exact: true,
@@ -10,19 +31,5 @@ export const routes = [
     path: '/register',
     exact: true,
     component: 'register'
-  },
-  {
-    label: 'home',
-    path: '/',
-    private: true,
-    exact: true,
-    component: 'home',
-  },
-  {
-    label: 'role',
-    path: '/role',
-    exact: true,
-    private: true,
-    component: 'role',
   },
 ]
