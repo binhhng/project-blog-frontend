@@ -3,6 +3,7 @@ import { CommonContext } from '@tools'
 import { Menu, Layout, Breadcrumb, AutoComplete, Input, Dropdown } from 'antd';
 import { HomeTwoTone, UserOutlined, GlobalOutlined, PoweroffOutlined, DashboardOutlined } from '@ant-design/icons';
 import './style.css'
+
 function LayoutDesign(props) {
   const { history, t, location: { pathname } } = props
   const { Header, Content, Footer } = Layout
@@ -89,4 +90,5 @@ function LayoutDesign(props) {
     </div >
   )
 }
+
 export default LayoutDesign

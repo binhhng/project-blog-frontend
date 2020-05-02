@@ -210,8 +210,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: isDev
-        ? path.resolve(__dirname, './.env.development.local')
-        : path.resolve(__dirname, './.env.production.local'),
+        ? path.resolve(__dirname, './.env.development')
+        : path.resolve(__dirname, './.env.production'),
       safe: true,
       systemvars: true,
       silent: true
