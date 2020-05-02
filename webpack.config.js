@@ -58,7 +58,7 @@ const pluginsOfProc = [
   new AutoDllPlugin({
     inject: true,
     filename: '[hash].dll.js',
-    debug:true,
+    debug: true,
     path: `${staticPath}/dll`,
     // entry: {
     //   vendor: [
@@ -106,11 +106,11 @@ module.exports = {
               {
                 loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
               },
-              {
-                loader: 'css-loader'
-              },
-              { ...postcssLoader },
-              { ...threadLoader }
+              // {
+              //   loader: 'css-loader'
+              // },
+              // { ...postcssLoader },
+              // { ...threadLoader }
             ]
           },
           {
@@ -210,8 +210,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: isDev
-        ? path.resolve(__dirname, './.env.development.local')
-        : path.resolve(__dirname, './.env.production.local'),
+        ? path.resolve(__dirname, './.env.development')
+        : path.resolve(__dirname, './.env.production'),
       safe: true,
       systemvars: true,
       silent: true

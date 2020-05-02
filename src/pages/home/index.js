@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Test from './listTodo'
 
 function Home(props) {
+<<<<<<< HEAD
   const [valueInput, setValueInput] = useState('')
   const [todoList, setTodoList] = useState('cong viec 1')
 
@@ -24,6 +25,9 @@ function Home(props) {
       <Test name={todoList}></Test>
     </div>
   )
+=======
+  return "home"
+>>>>>>> cicd
 }
 
 export default Home
