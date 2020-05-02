@@ -1,12 +1,8 @@
 import React, { useContext } from 'react'
 import { CommonContext } from '@tools'
-<<<<<<< HEAD
-import { Button } from 'antd'
-=======
 import { Menu, Layout, Breadcrumb, AutoComplete, Input, Dropdown } from 'antd';
 import { HomeTwoTone, UserOutlined, GlobalOutlined, PoweroffOutlined, DashboardOutlined } from '@ant-design/icons';
 import './style.css'
->>>>>>> cicd
 
 function LayoutDesign(props) {
   const { history, t, location: { pathname } } = props
@@ -33,20 +29,6 @@ function LayoutDesign(props) {
   );
   return (
     <div>
-<<<<<<< HEAD
-      <select onChange={onHandleChangeLanguage}>
-        <option value="vi">{t('option.changeLang')}</option>
-        <option value="vi">{t('common.language.vietnamese')}</option>
-        <option value="en">{t('common.language.english')}</option>
-      </select>
-      <ul>
-        <li onClick={() => onChangeRoute('/')}>{t('common.menu.home')} (click)</li>
-        <li onClick={() => onChangeRoute('/role')}>{t('common.menu.role')} (click)</li>
-        <li onClick={onLogout}>{t('common.menu.logout')}</li>
-      </ul>
-      <p>{props.children}</p>
-    </div>
-=======
       <Layout className="layout">
         <Header style={{
           backgroundColor: "black",
@@ -106,7 +88,6 @@ function LayoutDesign(props) {
         <Footer style={{ textAlign: 'center', backgroundColor: "#1C1E21", color: "white" }}>Copyright Mysterious</Footer>
       </Layout>
     </div >
->>>>>>> cicd
   )
 }
 
