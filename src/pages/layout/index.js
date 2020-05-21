@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { CommonContext } from '@tools'
 import { Menu, Layout, Breadcrumb, AutoComplete, Input, Dropdown } from 'antd';
-import { HomeTwoTone, UserOutlined, GlobalOutlined, PoweroffOutlined, DashboardOutlined } from '@ant-design/icons';
+import { HomeOutlined, UserOutlined, GlobalOutlined, PoweroffOutlined, DashboardOutlined } from '@ant-design/icons';
 import './style.css'
 
 function LayoutDesign(props) {
@@ -18,6 +18,7 @@ function LayoutDesign(props) {
   const menuDropdown = (
     <Menu style={{
       backgroundColor: "#111",
+
     }} >
       <Menu.Item key="10">
         <span className="menuLan" onClick={() => onHandleChangeLanguage('vi')}>{t('common.language.vietnamese')}</span>
@@ -31,16 +32,16 @@ function LayoutDesign(props) {
     <div>
       <Layout className="layout">
         <Header style={{
-          backgroundColor: "black",
+          backgroundColor: "#303030",
           position: "fixed",
           zIndex: 1,
           width: "100%"
         }} >
           <Menu theme="dark" mode="horizontal" selectedKeys={[pathname]} style={{
-            backgroundColor: "inherit"
+            backgroundColor: "#303030"
           }} >
             <Menu.Item key="/" onClick={() => history.push('/')}>
-              <HomeTwoTone />Home
+              <HomeOutlined /> Home
             </Menu.Item>
             <Menu.Item key="/profile" onClick={() => history.push('/profile')}>
               <UserOutlined />Profile
