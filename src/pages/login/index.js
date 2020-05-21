@@ -9,7 +9,7 @@ function Login(props) {
 
   function onHandleLogin() {
     if (username === '123' && password === '123') {
-      dispatch({ type: 'login', payload: true })
+      dispatch({ type: 'login', payload: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ZWJkMjBkMC04ODZlLTExZWEtOTU0YS1hYmMyOWU0MmEzNTQiLCJpYXQiOjE1OTAwNTEwMzN9.2aNFsRBMALezD3_5LiyXL9Le_JZqg5MbG7Y19J4f3j0" })
     }
   }
 
