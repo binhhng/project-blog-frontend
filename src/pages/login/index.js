@@ -38,8 +38,8 @@ function Login(props) {
         remember: true,
       }}
     >
-
       <h1 className = "header">Mysterious</h1>
+      <Form>
       <Form.Item
         name="username"
         rules={[
@@ -83,6 +83,7 @@ function Login(props) {
 </a>
 <a onClick={() => history.push('/register')} className = "register_form">Don't have an account? Sign Up</a>
       </Form.Item>
+      </Form>
     </div>
   )
 }
