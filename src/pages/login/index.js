@@ -16,8 +16,6 @@ function Login(props) {
     if (username === '123' && password === '123') {
       dispatch({ type: 'login', payload: true })
     }
-    
-    
   }
 
   function onChangeInput(target, e) {
@@ -74,14 +72,14 @@ function Login(props) {
       </Form.Item>
       <Form.Item>
         <Button onClick={onHandleLogin} type="primary" htmlType="submit" className="login-form-button">
-          Log in
+        {t('loginPage.login')}
         </Button>            
       </Form.Item>
       <Form.Item>
       <a className="login-form-forgot" href="">
-    Forgot password?
+      {t('forgotPass.forgot')}
 </a>
-<a onClick={() => history.push('/register')} className = "register_form">Don't have an account? Sign Up</a>
+<a onClick={() => history.push('/register')} className = "register_form">{t('registerPage.register')}</a>
       </Form.Item>
       </Form>
     </div>
