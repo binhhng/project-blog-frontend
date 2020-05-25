@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Profile(props) {
-  return 'Profile'
+  const { t } = props
+  return t("profile.title")
 }
 
 export default Profile

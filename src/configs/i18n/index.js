@@ -9,9 +9,13 @@ const i18nResources = {
         menu: {
           analytics: 'Tổng hợp',
           home: 'Trang chủ',
+          profile: 'Hồ sơ',
+          dashboard: 'Bảng điều khiển',
+          search: 'Tìm kiếm tại đây', 
           role: 'Phân quyền',
           logout: 'Đăng xuất'
         }
+
       },
       option: {
         changeLang: 'Thay đổi ngôn ngữ'
@@ -20,7 +24,19 @@ const i18nResources = {
         login: 'Đăng nhập'
       },
       registerPage: {
-        register: 'Tạo mới account'
+        register: 'Chưa có tài khoản? Đăng ký ngay'
+      },
+      home: {
+        title: "Trang chủ"
+      },
+      profile: {
+        title: 'Trang cá nhân'
+      },
+      dashboard: {
+        title: 'Bảng điều khiển'
+      }, 
+      forgotPass: {
+        forgot: 'Quên mật khẩu?'
       }
     }
   },
@@ -34,6 +50,9 @@ const i18nResources = {
         menu: {
           analytics: 'Analytics',
           home: 'Home',
+          profile: 'Profile',
+          dashboard: 'Dashboard',
+          search: 'Search here', 
           role: 'Role',
           logout: 'Logout'
         }
@@ -45,7 +64,19 @@ const i18nResources = {
         login: 'Login'
       },
       registerPage: {
-        register: 'Register'
+        register: 'Do not have an account? Sign Up'
+      },
+      home: {
+        title: "Home"
+      },
+      profile: {
+        title: 'Profile'
+      },
+      dashboard: {
+        title: 'Dashboard'
+      }, 
+      forgotPass: {
+        forgot: 'Forgot Password?'
       }
     }
   }
