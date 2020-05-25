@@ -4,22 +4,20 @@ import { CookiesProvider } from 'react-cookie'
 import { ApolloProvider } from 'react-apollo'
 import { I18nextProvider } from 'react-i18next'
 import { BrowserRouter } from 'react-router-dom'
-
 import { i18nResources } from '@configs'
 import { CommonContext, Client } from '@tools'
-
 
 function commonReducer(state, action) {
   switch (action.type) {
     case 'login': {
-      localStorage.setItem('token', action.payload)
+      localStorage.setItem('access-token', action.payload)
       return {
         ...state,
         isAuth: action.payload
       }
     }
     case 'logout': {
-      localStorage.removeItem('token')
+      localStorage.removeItem('access-token')
       return {
         ...state,
         isAuth: action.payload
@@ -41,7 +39,7 @@ function commonReducer(state, action) {
 function AppProvider(props) {
   const [commonState, dispatch] = useReducer(commonReducer, {
     language: localStorage.getItem('lang') || 'vi',
-    isAuth: !!localStorage.getItem('token')
+    isAuth: !!localStorage.getItem('access-token')
   })
   i18n.init({
     resources: i18nResources,

@@ -4,9 +4,10 @@ import { Menu, Layout, Breadcrumb, AutoComplete, Input, Dropdown } from 'antd';
 import { HomeOutlined, UserOutlined, GlobalOutlined, PoweroffOutlined, DashboardOutlined } from '@ant-design/icons';
 import './style.css'
 
+const { Header, Content, Footer } = Layout
+
 function LayoutDesign(props) {
   const { history, t, location: { pathname } } = props
-  const { Header, Content, Footer } = Layout
   const { dispatch } = useContext(CommonContext)
 
   function onHandleChangeLanguage(value) {
