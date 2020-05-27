@@ -85,7 +85,7 @@ function LayoutDesign(props) {
           </Breadcrumb>
           <div className="site-layout-content">{props.children}</div>
         </Content>
-        <Footer style={{ textAlign: 'center', backgroundColor: "#1C1E21", color: "white" }}>Copyright Mysterious</Footer>
+        <Footer style={{ textAlign: 'center', backgroundColor: "#1C1E21", color: "white" }}>Copyright by Mysterious</Footer>
       </Layout>
     </div >
   )

@@ -1,3 +1,5 @@
+import Profile from "@pages/profile"
+
 const i18nResources = {
   vi: {
     translation: {
@@ -21,6 +23,11 @@ const i18nResources = {
       },
       registerPage: {
         register: 'Tạo mới account'
+      },
+      profile: {
+        userName: 'username',
+        fullName: 'Tên người dùng',
+        
       }
     }
   },
