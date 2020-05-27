@@ -4,18 +4,16 @@ const i18nResources = {
       common: {
         language: {
           vietnamese: 'Tiếng Việt',
-          english: 'Tiếng Anh',
+          english: 'Tiếng Anh'
         },
         menu: {
           analytics: 'Tổng hợp',
           home: 'Trang chủ',
           profile: 'Hồ sơ',
-          dashboard: 'Bảng điều khiển',
-          search: 'Tìm kiếm tại đây', 
-          role: 'Phân quyền',
+          dashboard: 'Thống kê',
+          search: 'Tìm kiếm tại đây',
           logout: 'Đăng xuất'
         }
-
       },
       option: {
         changeLang: 'Thay đổi ngôn ngữ'
@@ -27,14 +25,14 @@ const i18nResources = {
         register: 'Chưa có tài khoản? Đăng ký ngay'
       },
       home: {
-        title: "Trang chủ"
+        title: 'Trang chủ'
       },
       profile: {
         title: 'Trang cá nhân'
       },
       dashboard: {
-        title: 'Bảng điều khiển'
-      }, 
+        title: 'Thống kê'
+      },
       forgotPass: {
         forgot: 'Quên mật khẩu?'
       }
@@ -45,15 +43,14 @@ const i18nResources = {
       common: {
         language: {
           vietnamese: 'Vietnamese',
-          english: 'English',
+          english: 'English'
         },
         menu: {
           analytics: 'Analytics',
           home: 'Home',
           profile: 'Profile',
           dashboard: 'Dashboard',
-          search: 'Search here', 
-          role: 'Role',
+          search: 'Search here',
           logout: 'Logout'
         }
       },
@@ -67,14 +64,14 @@ const i18nResources = {
         register: 'Do not have an account? Sign Up'
       },
       home: {
-        title: "Home"
+        title: 'Home'
       },
       profile: {
         title: 'Profile'
       },
       dashboard: {
         title: 'Dashboard'
-      }, 
+      },
       forgotPass: {
         forgot: 'Forgot Password?'
       }
