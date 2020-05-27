@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Dashboard(props) {
-  return 'dashboard'
+  const { t } = props
+  return t("dashboard.title")
 }
 
 export default Dashboard

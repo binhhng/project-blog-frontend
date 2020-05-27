@@ -9,6 +9,7 @@ const { Header, Content, Footer } = Layout
 function LayoutDesign(props) {
   const { history, t, location: { pathname } } = props
   const { dispatch } = useContext(CommonContext)
+
   function onHandleChangeLanguage(value) {
     dispatch({ type: "changeLanguage", payload: value })
   }
@@ -42,13 +43,13 @@ function LayoutDesign(props) {
             backgroundColor: "#303030"
           }} >
             <Menu.Item key="/" onClick={() => history.push('/')}>
-              <HomeOutlined /> Home
+              <HomeOutlined />{t("common.menu.home")}
             </Menu.Item>
             <Menu.Item key="/profile" onClick={() => history.push('/profile')}>
-              <UserOutlined />Profile
+              <UserOutlined />{t("common.menu.profile")}
             </Menu.Item>
             <Menu.Item key="/dashboard" onClick={() => history.push('/dashboard')}>
-              <DashboardOutlined />Dashboard
+              <DashboardOutlined />{t("common.menu.dashboard")}
             </Menu.Item>
             <Menu.Item style={{
               float: 'right',
@@ -75,7 +76,7 @@ function LayoutDesign(props) {
                 options={[]}
               >
                 <Input.Search style={{
-                }} placeholder="Search here" />
+                }} placeholder={t("common.menu.search")} />
               </AutoComplete>
             </Menu.Item>
           </Menu>
