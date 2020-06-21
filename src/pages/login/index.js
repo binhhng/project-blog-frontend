@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { CommonContext } from '@tools'
-import { Form, Input, Button, Checkbox } from 'antd'
+import { CommonContext, Client } from '@tools'
+import { Form, Input, Button, Checkbox, notification } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { LOGIN } from './gql'
 import './style.css'
 
 function Login(props) {
@@ -11,13 +12,38 @@ function Login(props) {
   const { dispatch } = useContext(CommonContext)
 
   function onHandleLogin(e) {
-    if (username === '123' && password === '123') {
-      dispatch({
-        type: 'login',
-        payload:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ZWJkMjBkMC04ODZlLTExZWEtOTU0YS1hYmMyOWU0MmEzNTQiLCJpYXQiOjE1OTAwNTEwMzN9.2aNFsRBMALezD3_5LiyXL9Le_JZqg5MbG7Y19J4f3j0'
+    Client.mutate({
+      mutation: LOGIN,
+      variables: {
+        input: {
+          username,
+          password
+        }
+      }
+    }).then(res => {
+      console.log(res)
+      if (res.data.login) {
+        const { token } = res.data.login
+        notification.success({
+          message: 'Login thành công',
+          placement: 'bottomRight'
+        })
+        dispatch({
+          type: 'login',
+          payload: token
+        })
+      } else {
+        notification.error({
+          message: 'Login thất bại',
+          placement: 'bottomRight'
+        })
+      }
+    }).catch(err => {
+      notification.error({
+        message: 'Login thất bại',
+        placement: 'bottomRight'
       })
-    }
+    })
   }
 
   function onChangeInput(target, e) {
