@@ -1,0 +1,21 @@
+.Outline {
+    margin: 10px;
+    position: relative;
+    top: 110px;
+    left: 30%;
+    width: 30%;
+    font-family: 'Merriweather';
+    font-size: 200%;
+    color: #fff;
+    
+    }
+    .header{
+        font-family: 'Merriweather';
+        font-size: 200%;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-weight: 30;
+    }
+    
+  
