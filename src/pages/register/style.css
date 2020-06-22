@@ -9,6 +9,13 @@
     color: #fff;
     
     }
-  
+    .header{
+        font-family: 'Merriweather';
+        font-size: 200%;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-weight: 30;
+    }
     
   
