@@ -12,7 +12,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const WebpackBar = require('webpackbar')
 const Dotenv = require('dotenv-webpack')
 
-const isDev = true
+const isDev = false
+const isProduction = true
+
 const staticPath = 'static'
 
 const threadLoader = {
@@ -104,7 +106,7 @@ module.exports = {
             sideEffects: true,
             use: [
               {
-                loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
+                loader: 'style-loader'
               },
               // {
               //   loader: 'css-loader'
@@ -118,7 +120,7 @@ module.exports = {
             sideEffects: true,
             use: [
               {
-                loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
+                loader: 'style-loader'
               },
               { loader: 'css-loader' },
               { ...postcssLoader },
@@ -131,7 +133,7 @@ module.exports = {
             sideEffects: true,
             use: [
               {
-                loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader
+                loader: 'style-loader'
               },
               { loader: 'css-loader' },
               { ...postcssLoader },
@@ -205,13 +207,13 @@ module.exports = {
     ]
   },
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
-  mode: isDev ? 'development' : 'production',
+  // mode: isDev ? 'development' : 'production',
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({
-      path: isDev
-        ? path.resolve(__dirname, './.env.development')
-        : path.resolve(__dirname, './.env.production'),
+      path: isProduction
+        ? path.resolve(__dirname, './.env.production')
+        : path.resolve(__dirname, './.env.development'),
       safe: true,
       systemvars: true,
       silent: true
