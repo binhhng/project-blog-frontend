@@ -7,15 +7,26 @@
     font-family: 'Merriweather';
     font-size: 200%;
     color: #fff;
-    
-    }
-    .header{
-        font-family: 'Merriweather';
-        font-size: 200%;
-        color: #fff;
-        text-align: center;
-        position: relative;
-        font-weight: 30;
-    }
-    
-  
+}
+
+.header {
+    font-family: 'Merriweather';
+    font-size: 200%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    font-weight: 30;
+}
+
+.ant-form-item-label>label {
+    color: #fff;
+}
+
+span.ant-radio+* {
+    color: #fff;
+}
+
+.ant-checkbox+span {
+    color: #fff
+}

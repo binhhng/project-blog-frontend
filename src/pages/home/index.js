@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef } from 'react'
 import { Form, Card, Avatar, Layout, Button, Modal, Row, Col, Input, notification, Menu, Dropdown, Popconfirm } from 'antd';
-import { LikeOutlined, EllipsisOutlined, EditOutlined } from '@ant-design/icons'
+import { LikeOutlined, EllipsisOutlined, EditOutlined, UserOutlined } from '@ant-design/icons'
 import { useQuery } from 'react-apollo';
 import { GET_POSTS, TOGGLE_LIKE_POST, CREATE_NEW_POST, DELETE_POST } from './queries';
 import { Client } from '@tools';
@@ -80,9 +80,6 @@ function Home(props) {
     <Layout>
       <Button
         type="primary"
-        style={{
-          width: '30vw'
-        }}
         onClick={() => setVisibleModel(true)}
       >Thêm bài viết</Button>
       <Modal
@@ -165,7 +162,7 @@ function Home(props) {
                   ]}
                 >
                   <Meta
-                    avatar={<Avatar />}
+                    avatar={<Avatar icon={<UserOutlined />} />}
                     title={item.creator.username}
                     description={item.description}
                   />
