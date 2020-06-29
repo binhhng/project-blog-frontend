@@ -69,7 +69,7 @@ const Dashboard = (props) => {
       .duration(500)
       .attr("width", (d, i) => xScale(d.value));
 
-    g.append("text").attr("y", -10).text("Biểu đồ các bài viết trong 7 ngày gần nhất");
+    g.append("text").attr("y", -10).style("color", "#fff").text("Biểu đồ các bài viết trong 7 ngày gần nhất");
   })
 
   useEffect(() => {

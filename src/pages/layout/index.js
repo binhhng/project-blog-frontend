@@ -16,8 +16,10 @@ const GET_CURRENT_USER = gql`
       role
       username
       avatar
+      email
       fullName
       createdAt
+      dayOfBirth
     }
   }
 `
