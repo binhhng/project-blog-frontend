@@ -47,7 +47,7 @@ function Home(props) {
     }).then(res => {
       if (res.data) {
         notification.success({
-          message: 'Đăng bài thành công',
+          message: t('common.message.postNew.success'),
           placement: 'bottomRight'
         })
         refetch()
@@ -66,7 +66,7 @@ function Home(props) {
     }).then(res => {
       if (res.data.deletePost) {
         notification.success({
-          message: 'Xoá bài thành công',
+          message: t('common.message.deletePost.success'),
           placement: 'bottomRight'
         })
         refetch()
@@ -90,10 +90,12 @@ function Home(props) {
           left: '25%'
         }}
         onClick={() => setVisibleModel(true)}
-      >Thêm bài viết</Button>
+      >{t('homePage.addPost')}</Button>
       <Modal
-        title="Thêm bài viết"
+        title={t('homePage.addPost')}
         visible={visibleModel}
+        okText={t('homePage.ok')}
+        cancelText={t('homePage.cancel')}
         onOk={handlePostNew}
         onCancel={() => {
           setVisibleModel(false)
@@ -103,7 +105,7 @@ function Home(props) {
         <Form layout="vertical" hideRequiredMark>
           <Row gutter={16}>
             <Col span={24}>
-              <Form.Item label="Nội dung  :">
+              <Form.Item label={t('homePage.description')}>
                 <Input ref={descriptionRef}></Input>
                 <div className="uploadImage">
                   <UploadFunction uploadImage={(value) => setThumbnails(value)}></UploadFunction>
@@ -114,20 +116,20 @@ function Home(props) {
         </Form>
       </Modal>
       <Modal
-        title="Xoá bài viết"
+        title={t('homePage.deletePost')}
         visible={deletePostId.length > 0}
         onOk={handleDeletePost}
         onCancel={() => setDeletePostId('')}
       >
-        Bạn có chắc muốn xoá bài viết
+        {t('homePage.confirmDelete')}
       </Modal>
       <Modal
-        title="Sửa bài viết"
+        title={t('homePage.editPost')}
         visible={editPostId.length > 0}
         onOk={handleUpdatePost}
         onCancel={() => setEditPostId('')}
       >
-        Bạn có chắc muốn xoá bài viết
+        {t('homePage.confirmDelete')}
       </Modal>
       <Layout>
         {
@@ -151,16 +153,16 @@ function Home(props) {
                       }}
                       onClick={() => handleToggleLike(item._id)}
                     ><LikeOutlined />{item.idLikes.length === 0 ? '' : item.idLikes.length}</div>,
-                    <p><EditOutlined key="edit" /> Comment</p>,
+                    <p><EditOutlined key="edit" /> {t('homePage.comment')}</p>,
                     <Dropdown
                       overlay={
                         (
                           <Menu>
                             <Menu.Item key="0" onClick={() => setDeletePostId(item._id)}>
-                              <a>Xoá bài viết</a>
+                              <a>{t('homePage.deletePost')}</a>
                             </Menu.Item>
                             <Menu.Item key="1" onClick={() => setEditPostId(item._id)}>
-                              <p>Sửa bài viết</p>
+                              <p>{t('homePage.editPost')}</p>
                             </Menu.Item>
                             <Menu.Divider />
                           </Menu>

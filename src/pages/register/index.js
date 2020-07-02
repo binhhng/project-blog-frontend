@@ -24,7 +24,8 @@ function Register(props) {
           password,
           fullName,
           gender,
-          role: 'MEMBER'
+          role: 'MEMBER',
+          email
         }
       }
     }).then(res => {
@@ -88,14 +89,14 @@ function Register(props) {
         initialValues={{
           remember: true
         }}
+        hideRequiredMark
       >
         <Form.Item
           name="username"
-          label="Username"
+          label={t('registerPage.username')}
           rules={[
             {
               required: true,
-              message: 'Please input username!',
             },
           ]}
           hasFeedback
@@ -106,11 +107,10 @@ function Register(props) {
         </Form.Item>
         <Form.Item
           name="fullName"
-          label="Full Name"
+          label={t('registerPage.fullName')}
           rules={[
             {
               required: true,
-              message: 'Please input your Name!',
             },
           ]}
           hasFeedback
@@ -119,28 +119,26 @@ function Register(props) {
             prefix={<AliwangwangOutlined className='site-form-item-icon'
               placeholder='Username' />} />
         </Form.Item>
-        <Form.Item name="gender" label="Gender" rules={[
+        <Form.Item name="gender" label={t('registerPage.gender')} rules={[
           {
             required: true
           }
         ]}>
           <Radio.Group>
-            <Radio value="MALE">Male</Radio>
-            <Radio value="FEMALE">Female</Radio>
-            <Radio value="OTHER">Other</Radio>
+            <Radio value="MALE">{t('registerPage.genders.male')}</Radio>
+            <Radio value="FEMALE">{t('registerPage.genders.female')}</Radio>
+            <Radio value="OTHER">{t('registerPage.genders.other')}</Radio>
           </Radio.Group>
         </Form.Item>
         <Form.Item
           name="email"
-          label="Email"
+          label={t('registerPage.email')}
           rules={[
             {
               type: 'email',
-              message: 'The input is not valid E-mail!',
             },
             {
               required: true,
-              message: 'Please input your E-mail!',
             },
           ]}
         >
@@ -150,11 +148,10 @@ function Register(props) {
         </Form.Item>
         <Form.Item
           name="password"
-          label="Password"
+          label={t('registerPage.password')}
           rules={[
             {
               required: true,
-              message: 'Please input your password!',
             },
           ]}
           hasFeedback
@@ -165,13 +162,12 @@ function Register(props) {
         </Form.Item>
         <Form.Item
           name="confirm"
-          label="Confirm Password"
+          label={t('registerPage.confirmPassword')}
           dependencies={['password']}
           hasFeedback
           rules={[
             {
               required: true,
-              message: 'Please confirm your password!',
             },
             ({ getFieldValue }) => ({
               validator(rule, value) {
@@ -179,7 +175,7 @@ function Register(props) {
                   return Promise.resolve();
                 }
 
-                return Promise.reject('The two passwords that you entered do not match!');
+                return Promise.reject();
               },
             }),
           ]}
@@ -194,19 +190,19 @@ function Register(props) {
           rules={[
             {
               validator: (_, value) =>
-                value ? Promise.resolve() : Promise.reject('Should accept agreement'),
+                value ? Promise.resolve() : Promise.reject(),
             },
           ]}
           {...tailFormItemLayout}
         >
           <Checkbox>
-            I have read the <a href="">agreement</a>
+            {t('registerPage.policy')} <a href="">{t('registerPage.agreement')}</a>
           </Checkbox>
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           <Button type="primary" htmlType="submit" className='submitBtn'>
-            Register
-        </Button>
+            {t('registerPage.register')}
+          </Button>
         </Form.Item>
       </Form>
     </div >

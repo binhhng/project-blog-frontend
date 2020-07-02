@@ -7,35 +7,95 @@ const i18nResources = {
           english: 'Tiếng Anh'
         },
         menu: {
-          analytics: 'Tổng hợp',
           home: 'Trang chủ',
           profile: 'Hồ sơ',
           dashboard: 'Thống kê',
-          search: 'Tìm kiếm tại đây',
-          logout: 'Đăng xuất'
+          search: 'Tìm kiếm',
+        },
+        message: {
+          login: {
+            success: 'Đăng nhập thành công',
+            failed: 'Đăng nhập thất bại'
+          },
+          register: {
+            success: 'Đăng kí tài khoản thành công',
+            failed: 'Đăng kí tài khoản thất bại',
+          },
+          postNew: {
+            success: 'Cập nhập trạng thái thành công',
+            failed: 'Cập nhập trạng thái thất bại'
+          },
+          deletePost: {
+            success: 'Xoá bài viết thành công',
+            failed: 'Xoá bài viết thất bại'
+          },
+          editPost: {
+            success: 'Cập nhập bài viết thành công',
+            failed: 'Cập nhập bài viết thất bại'
+          },
+          updateProfile: {
+            success: 'Cập nhập thông tin thành công',
+            failed: 'Cập nhập thông tin thất bại'
+          }
         }
       },
-      option: {
-        changeLang: 'Thay đổi ngôn ngữ'
-      },
       loginPage: {
-        login: 'Đăng nhập'
+        login: 'Đăng nhập',
+        register: 'Chưa có tài khoản? Đăng ký ngay',
+        rememberPassword: 'Ghi nhớ tôi',
+        forgotPassword: 'Quên mật khẩu?'
       },
       registerPage: {
-        register: 'Chưa có tài khoản? Đăng ký ngay'
+        register: 'Đăng kí',
+        username: 'Tên đăng nhập',
+        fullName: 'Họ và tên',
+        gender: 'Giới tính',
+        email: 'Email',
+        password: 'Mật Khẩu',
+        confirmPassword: 'Xác nhận mật khẩu',
+        policy: 'Tôi đã đọc',
+        agreement: 'Điều khoản',
+        genders: {
+          male: 'Nam',
+          female: 'Nữ',
+          other: 'Khác'
+        }
       },
-      home: {
-        title: 'Trang chủ'
+      homePage: {
+        title: 'Trang chủ',
+        addPost: 'Cập nhập trạng thái',
+        comment: 'Bình luận',
+        deletePost: 'Xoá bài viết',
+        editPost: 'Chỉnh sửa bài viết',
+        description: 'Nội dung',
+        ok: 'Tạo post',
+        cancel: 'Huỷ',
+        confirmDelete: 'Bạn có chắc muốn xoá bài viết'
       },
-      profile: {
-        title: 'Trang cá nhân'
+      profilePage: {
+        title: 'Trang cá nhân',
+        username: 'Tên người dùng',
+        fullName: 'Họ và tên',
+        email: 'Email',
+        accountCreatedAt: 'Ngày tạo tài khoản',
+        dayOfBirth: 'Ngày sinh',
+        updateProfile: 'Sửa thông tin',
+        gender: 'Giới tính',
+        avatar: 'Ảnh đại diện',
+        genders: {
+          male: 'Nam',
+          female: 'Nữ',
+          other: 'Khác'
+        },
+        updateBtn: 'Cập nhập',
+        cancelBtn: 'Huỷ',
+        online: 'Đang hoạt động',
+        offline: 'Tạm vắng',
+        follow: 'Theo dõi'
       },
-      dashboard: {
+      dashboardPage: {
         title: 'Thống kê'
       },
-      forgotPass: {
-        forgot: 'Quên mật khẩu?'
-      }
     }
   },
   en: {
@@ -46,35 +106,95 @@ const i18nResources = {
           english: 'English'
         },
         menu: {
-          analytics: 'Analytics',
           home: 'Home',
           profile: 'Profile',
           dashboard: 'Dashboard',
           search: 'Search here',
-          logout: 'Logout'
+        },
+        message: {
+          login: {
+            success: 'Login success',
+            failed: 'Login failed'
+          },
+          register: {
+            success: 'Register success',
+            failed: 'Register failed',
+          },
+          postNew: {
+            success: 'Post new success',
+            failed: 'Post new failed'
+          },
+          deletePost: {
+            success: 'Delete post success',
+            failed: 'Delete post failed'
+          },
+          editPost: {
+            success: 'Update post success',
+            failed: 'Update post failed'
+          },
+          updateProfile: {
+            success: 'Update profile success',
+            failed: 'Update profile failed'
+          }
         }
       },
-      option: {
-        changeLang: 'Change Language'
-      },
       loginPage: {
-        login: 'Login'
+        login: 'Login',
+        rememberPassword: 'Remember me',
+        register: 'Do not have an account? Sign Up',
+        forgotPassword: 'Forgot Password?'
       },
       registerPage: {
-        register: 'Do not have an account? Sign Up'
+        register: 'Register',
+        username: 'Username',
+        fullName: 'Full name',
+        gender: 'Gender',
+        email: 'Email',
+        password: 'Password',
+        confirmPassword: 'Confirm password',
+        policy: 'I have read',
+        agreement: 'Agreement',
+        genders: {
+          male: 'Male',
+          female: 'Female',
+          other: 'Other'
+        }
       },
-      home: {
-        title: 'Home'
+      homePage: {
+        title: 'Home',
+        addPost: 'Create new post',
+        comment: 'Comment',
+        deletePost: 'Delete post',
+        editPost: 'Edit post',
+        description: 'Description',
+        ok: 'Create post',
+        cancel: 'Cancel',
+        confirmDelete: 'Are you want to delete this post'
       },
-      profile: {
-        title: 'Profile'
+      profilePage: {
+        title: 'Profile',
+        username: 'Username',
+        fullName: 'Full name',
+        email: 'Email',
+        accountCreatedAt: 'Account created at',
+        dayOfBirth: 'Day of birth',
+        updateProfile: 'Update profile',
+        gender: 'Gender',
+        avatar: 'Avatar',
+        genders: {
+          male: 'Male',
+          female: 'Female',
+          other: 'Other'
+        },
+        updateBtn: 'Update',
+        cancelBtn: 'Cancel',
+        online: 'Online',
+        offline: 'Offline',
+        follow: 'Follow'
       },
-      dashboard: {
+      dashboardPage: {
         title: 'Dashboard'
       },
-      forgotPass: {
-        forgot: 'Forgot Password?'
-      }
     }
   }
 }

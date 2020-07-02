@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import { PageHeader, Button, Descriptions, Drawer, Form, Row, Col, Input, DatePicker, Select, Radio, notification } from 'antd';
+import { PageHeader, Button, Descriptions, Drawer, Form, Row, Col, Input, DatePicker, Radio, notification } from 'antd';
 import moment from 'moment';
 import { UploadFunction } from '@components'
 import { Client } from '@tools'
 import { UPDATE_USER } from './queries';
 
-const { Option } = Select
 const width = window.innerWidth
 
 function Profile(props) {
@@ -22,7 +21,7 @@ function Profile(props) {
     } = currentUser
     setFieldsValue({
       ...currentUser,
-      dayOfBirth: moment(dayOfBirth),
+      dayOfBirth: dayOfBirth ? moment(dayOfBirth) : null,
     })
   }, [currentUser])
 
@@ -37,7 +36,6 @@ function Profile(props) {
           email,
           dayOfBirth,
         } = res
-        console.log(dayOfBirth)
         Client.mutate({
           mutation: UPDATE_USER,
           variables: {
@@ -51,10 +49,9 @@ function Profile(props) {
             }
           }
         }).then(res => {
-          console.log(res.data.updateUser)
           if (res.data) {
             notification.success({
-              message: 'Sửa thông tin thành công',
+              message: t('common.message.updateProfile.success'),
               placement: 'bottomRight'
             })
             refetchCurrentUser()
@@ -77,18 +74,18 @@ function Profile(props) {
           backgroundColor: '#c3d4c8'
         }}
         extra={[
-          <Button key="1" type="" onClick={() => setVisible(true)}>Sửa thông tin</Button>,
+          <Button key="1" type="" onClick={() => setVisible(true)}>{t('profilePage.updateProfile')}</Button>,
         ]}
         avatar={{ src: currentUser.avatar }}
       >
         <Descriptions size="small" column={2}>
-          <Descriptions.Item label="Tên người dùng">{currentUser?.username}</Descriptions.Item>
-          <Descriptions.Item label="Họ và tên">{currentUser?.fullName}</Descriptions.Item>
-          <Descriptions.Item label="Ngày tạo tài khoản">{moment(currentUser?.createdAt).format("MMM DD YYYY")}</Descriptions.Item>
-          <Descriptions.Item label="Ngày sinh">{moment(currentUser?.dayOfBirth).format("MMM DD YYYY")}</Descriptions.Item>
+          <Descriptions.Item label={t('profilePage.username')}>{currentUser?.username}</Descriptions.Item>
+          <Descriptions.Item label={t('profilePage.fullName')}>{currentUser?.fullName}</Descriptions.Item>
+          <Descriptions.Item label={t('profilePage.accountCreatedAt')}>{moment(currentUser?.createdAt).format("MMM DD YYYY")}</Descriptions.Item>
+          <Descriptions.Item label={t('profilePage.dayOfBirth')}>{moment(currentUser?.dayOfBirth).format("MMM DD YYYY")}</Descriptions.Item>
         </Descriptions>
         <Drawer
-          title='Sua thong tin'
+          title={t('profilePage.updateProfile')}
           visible={visible}
           width={width > 800 ? width / 2 : width / 1.1}
           onClose={() => setVisible(false)}
@@ -96,19 +93,19 @@ function Profile(props) {
           <Form layout="vertical" hideRequiredMark form={form} name="profile-user">
             <Row gutter={16}>
               <Col span={24}>
-                <Form.Item label="Change avatar">
+                <Form.Item label={t('profilePage.avatar')}>
                   <UploadFunction uploadImage={(value) => setAvatar(value)}></UploadFunction>
                 </Form.Item>
               </Col>
             </Row>
             <Row gutter={16}>
               <Col span={12}>
-                <Form.Item label="Full Name" name='fullName'>
+                <Form.Item label={t('profilePage.fullName')} name='fullName'>
                   <Input placeholder="Please enter full name" />
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item label="Email" name='email'>
+                <Form.Item label={t('profilePage.email')} name='email'>
                   <Input
                     style={{ width: '100%' }}
                     placeholder="Please enter email"
@@ -118,23 +115,23 @@ function Profile(props) {
             </Row>
             <Row gutter={16}>
               <Col span={12}>
-                <Form.Item label="Username" name='username'>
+                <Form.Item label={t('profilePage.username')} name='username'>
                   <Input placeholder="Please enter username" />
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item label="Sex" name='gender'>
+                <Form.Item label={t('profilePage.gender')} name='gender'>
                   <Radio.Group>
-                    <Radio value="MALE">Male</Radio>
-                    <Radio value="FEMALE">Female</Radio>
-                    <Radio value="OTHER">Other</Radio>
+                    <Radio value="MALE">{t('profilePage.genders.male')}</Radio>
+                    <Radio value="FEMALE">{t('profilePage.genders.female')}</Radio>
+                    <Radio value="OTHER">{t('profilePage.genders.other')}</Radio>
                   </Radio.Group>
                 </Form.Item>
               </Col>
             </Row>
             <Row gutter={16}>
               <Col span={12}>
-                <Form.Item label="Day of Birth" name='dayOfBirth'>
+                <Form.Item label={t('profilePage.dayOfBirth')} name='dayOfBirth'>
                   <DatePicker
                     style={{ width: '100%' }}
                     format='DD/MM/YYYY'
@@ -161,10 +158,10 @@ function Profile(props) {
             }}
           >
             <Button onClick={() => setVisible(false)} style={{ marginRight: 8 }}>
-              Cancel
-                </Button>
+              {t('profilePage.cancelBtn')}
+            </Button>
             <Button onClick={handleUpdateUser} type="primary">
-              Submit
+              {t('profilePage.updateBtn')}
             </Button>
           </div>
         </Drawer>

@@ -122,7 +122,7 @@ function LayoutDesign(props) {
                 showSearch
                 labelInValue
                 showArrow={false}
-                placeholder='Search User'
+                placeholder={t("common.menu.search")}
                 notFoundContent={<Spin size="small" />}
                 filterOption={false}
                 onSearch={handleSearchUser}

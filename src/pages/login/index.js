@@ -25,7 +25,7 @@ function Login(props) {
       if (res.data.login) {
         const { token } = res.data.login
         notification.success({
-          message: 'Login thành công',
+          message: t('common.message.login.success'),
           placement: 'bottomRight'
         })
         dispatch({
@@ -34,7 +34,7 @@ function Login(props) {
         })
       } else {
         notification.error({
-          message: 'Login thất bại',
+          message: t('common.message.login.failed'),
           placement: 'bottomRight'
         })
       }
@@ -70,7 +70,6 @@ function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your Username!'
             }
           ]}
         >
@@ -85,7 +84,6 @@ function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your Password!'
             }
           ]}
         >
@@ -98,7 +96,7 @@ function Login(props) {
         </Form.Item>
         <Form.Item>
           <Form.Item name='remember' valuePropName='checked' noStyle>
-            <Checkbox className='fontstyle'>Remember me</Checkbox>
+            <Checkbox className='fontstyle'>{t('loginPage.rememberPassword')}</Checkbox>
           </Form.Item>
         </Form.Item>
         <Form.Item>
@@ -113,13 +111,13 @@ function Login(props) {
         </Form.Item>
         <Form.Item>
           <a className='login-form-forgot' href=''>
-            {t('forgotPass.forgot')}
+            {t('loginPage.forgotPassword')}
           </a>
           <a
             onClick={() => history.push('/register')}
             className='register_form'
           >
-            {t('registerPage.register')}
+            {t('loginPage.register')}
           </a>
         </Form.Item>
       </Form>
