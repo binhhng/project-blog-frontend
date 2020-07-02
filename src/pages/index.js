@@ -49,7 +49,6 @@ function Routers(props) {
                 />
               )
           )}
-        <Route render={() => <p>404</p>} />
       </Switch>
     </Suspense>
   )

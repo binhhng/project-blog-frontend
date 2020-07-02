@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Upload, Icon, message, Modal } from 'antd';
+import { PlusOutlined } from '@ant-design/icons'
 import './index.css'
 
 function getBase64(file) {
@@ -56,7 +57,7 @@ function UploadFunction(props) {
 
   const uploadButton = (
     <div>
-      <Icon type="plus" />
+      <PlusOutlined />
       <div className="ant-upload-text">Upload Image</div>
     </div>
   );

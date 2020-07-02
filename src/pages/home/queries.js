@@ -6,6 +6,8 @@ const GET_POSTS = gql`
       _id
       creator{
         username
+        avatar
+        isOnline
       }
       description
       thumbnails
