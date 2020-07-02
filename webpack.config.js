@@ -12,8 +12,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const WebpackBar = require('webpackbar')
 const Dotenv = require('dotenv-webpack')
 
-const isDev = false
-const isProduction = true
+const isDev = true
+const isProduction = false
 
 const staticPath = 'static'
 
@@ -207,7 +207,7 @@ module.exports = {
     ]
   },
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
-  // mode: isDev ? 'development' : 'production',
+  mode: isDev ? 'development' : 'production',
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({

@@ -79,11 +79,11 @@ function Register(props) {
   };
   return (
     <div>
-      <h1 className='header'>Mysterious</h1>
+      <h1 className='registerHeader'>Mysterious Blog</h1>
       <Form
         {...formItemLayout}
         name='register'
-        className='Outline'
+        className='formRegister'
         onFinish={onFinish}
         initialValues={{
           remember: true
@@ -204,7 +204,7 @@ function Register(props) {
           </Checkbox>
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" className='submitBtn'>
             Register
         </Button>
         </Form.Item>
@@ -213,17 +213,4 @@ function Register(props) {
   )
 
 }
-export default Register
-
-/*
-<p>{t('registerPage.register')}</p>
-      <button onClick={() => history.push('/')}>Come back home</button>
-
-  return (
-    <div>
-     <h1 className='header'>Mysterious</h1>
-
-    </div>
-  )
-
-      */
+export default React.memo(Register)

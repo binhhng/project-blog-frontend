@@ -22,10 +22,13 @@ const Dashboard = (props) => {
     history.push('/')
   }
 
-  const { data } = useSubscription(DASHBOARD_UPDATED)
+  const { data, error } = useSubscription(DASHBOARD_UPDATED)
   const { data: dashboardQuery } = useQuery(DASHBOARD_DATA, {
     fetchPolicy: 'network-only'
   })
+
+  console.log(data, error)
+
   const svgRef = useRef()
 
   const { numberOfUsers = 0, numberOfPosts = 0, topUser = {}, postsInWeek = [] } = data ? data.dashboardUpdated : dashboardQuery ? dashboardQuery.dashboardData ? dashboardQuery.dashboardData : {} : {}

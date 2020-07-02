@@ -57,7 +57,7 @@ function Login(props) {
 
   return (
     <div>
-      <h1 className='header'>Mysterious</h1>
+      <h1 className='header'>Mysterious Blog</h1>
       <Form
         name='normal_login'
         className='Outline'
