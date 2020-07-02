@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { CommonContext } from '@tools'
-import { Form, Input, Button, Checkbox } from 'antd'
+import { CommonContext, Client } from '@tools'
+import { Form, Input, Button, Checkbox, notification } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { LOGIN } from './gql'
 import './style.css'
 
 function Login(props) {
@@ -11,13 +12,38 @@ function Login(props) {
   const { dispatch } = useContext(CommonContext)
 
   function onHandleLogin(e) {
-    if (username === '123' && password === '123') {
-      dispatch({
-        type: 'login',
-        payload:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ZWJkMjBkMC04ODZlLTExZWEtOTU0YS1hYmMyOWU0MmEzNTQiLCJpYXQiOjE1OTAwNTEwMzN9.2aNFsRBMALezD3_5LiyXL9Le_JZqg5MbG7Y19J4f3j0'
+    Client.mutate({
+      mutation: LOGIN,
+      variables: {
+        input: {
+          username,
+          password
+        }
+      }
+    }).then(res => {
+      console.log(res)
+      if (res.data.login) {
+        const { token } = res.data.login
+        notification.success({
+          message: t('common.message.login.success'),
+          placement: 'bottomRight'
+        })
+        dispatch({
+          type: 'login',
+          payload: token
+        })
+      } else {
+        notification.error({
+          message: t('common.message.login.failed'),
+          placement: 'bottomRight'
+        })
+      }
+    }).catch(err => {
+      notification.error({
+        message: 'Login thất bại',
+        placement: 'bottomRight'
       })
-    }
+    })
   }
 
   function onChangeInput(target, e) {
@@ -31,7 +57,7 @@ function Login(props) {
 
   return (
     <div>
-      <h1 className='header'>Mysterious</h1>
+      <h1 className='header'>Mysterious Blog</h1>
       <Form
         name='normal_login'
         className='Outline'
@@ -44,7 +70,6 @@ function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your Username!'
             }
           ]}
         >
@@ -59,7 +84,6 @@ function Login(props) {
           rules={[
             {
               required: true,
-              message: 'Please input your Password!'
             }
           ]}
         >
@@ -72,7 +96,7 @@ function Login(props) {
         </Form.Item>
         <Form.Item>
           <Form.Item name='remember' valuePropName='checked' noStyle>
-            <Checkbox className='fontstyle'>Remember me</Checkbox>
+            <Checkbox className='fontstyle'>{t('loginPage.rememberPassword')}</Checkbox>
           </Form.Item>
         </Form.Item>
         <Form.Item>
@@ -87,13 +111,13 @@ function Login(props) {
         </Form.Item>
         <Form.Item>
           <a className='login-form-forgot' href=''>
-            {t('forgotPass.forgot')}
+            {t('loginPage.forgotPassword')}
           </a>
           <a
             onClick={() => history.push('/register')}
             className='register_form'
           >
-            {t('registerPage.register')}
+            {t('loginPage.register')}
           </a>
         </Form.Item>
       </Form>

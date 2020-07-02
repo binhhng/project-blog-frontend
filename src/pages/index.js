@@ -27,29 +27,28 @@ function Routers(props) {
                       <Component {...props1} {...props} />
                     </Layout>
                   ) : (
-                    <Redirect to='/login' />
-                  )
+                      <Redirect to='/login' />
+                    )
                 }}
               />
             ) : (
-              // public
-              <Route
-                key={route.label}
-                {...route}
-                component={props1 => {
-                  const Component = React.lazy(() =>
-                    import(`./${route.component}`)
-                  )
-                  return !isAuth ? (
-                    <Component {...props1} {...props} />
-                  ) : (
-                    <Redirect to='/' />
-                  )
-                }}
-              />
-            )
+                // public
+                <Route
+                  key={route.label}
+                  {...route}
+                  component={props1 => {
+                    const Component = React.lazy(() =>
+                      import(`./${route.component}`)
+                    )
+                    return !isAuth ? (
+                      <Component {...props1} {...props} />
+                    ) : (
+                        <Redirect to='/' />
+                      )
+                  }}
+                />
+              )
           )}
-        <Route render={() => <p>404</p>} />
       </Switch>
     </Suspense>
   )

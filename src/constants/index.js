@@ -1,0 +1,5 @@
+const ROLE_DASHBOARD = ['SUPERADMIN', 'ADMIN']
+
+export {
+  ROLE_DASHBOARD
+}

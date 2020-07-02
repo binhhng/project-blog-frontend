@@ -32,4 +32,11 @@ export const routes = [
     exact: true,
     component: 'register'
   },
+  {
+    label: 'profilePersonal',
+    path: '/:username',
+    private: true,
+    exact: true,
+    component: 'profile/profilePersonal',
+  },
 ]

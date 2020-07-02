@@ -6,7 +6,9 @@
   "scripts": {
     "start:webpack": "webpack-dev-server --mode development",
     "build:analyzer": "NODE_ENV=production NODE_TYPE=analyzer webpack",
-    "build:webpack": "webpack",
+    "build:webpack": "webpack --mode production",
+    "start:prod": "node server.js",
+    "heroku-postbuild": "npm run build",
     "start": "npm run start:webpack",
     "build": "npm run build:webpack",
     "eslint-fix": "eslint ./src --fix --quiet"
@@ -67,6 +69,7 @@
     "webpackbar": "^4.0.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.2.1",
     "antd": "^4.1.4",
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",
@@ -76,6 +79,8 @@
     "apollo-link-http": "^1.5.16",
     "apollo-link-ws": "^1.0.19",
     "apollo-utilities": "^1.3.3",
+    "d3": "^5.16.0",
+    "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
     "i18next": "^19.3.4",
