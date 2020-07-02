@@ -12,8 +12,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const WebpackBar = require('webpackbar')
 const Dotenv = require('dotenv-webpack')
 
-const isDev = true
-const isProduction = false
+const isDev = !process.env.NODE_ENV
 
 const staticPath = 'static'
 
@@ -211,7 +210,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new Dotenv({
-      path: isProduction
+      path: !isDev
         ? path.resolve(__dirname, './.env.production')
         : path.resolve(__dirname, './.env.development'),
       safe: true,
